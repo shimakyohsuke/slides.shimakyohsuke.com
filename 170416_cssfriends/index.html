@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>脱初心者！コピペに頼らないCSS入門 | 第一回「CSS再入門」 | CSSフレンズ | シマキョウスケ</title>
+
+  <link rel="stylesheet" href="/css/reveal.css">
+  <link rel="stylesheet" href="/css/theme/shima.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="/lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? '/css/print/pdf.css' : '/css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>脱初心者！<br>コピペに頼らない CSS入門</h1>
+        <p>2017/04/16 <a href="https://cybozu.co.jp/company/outline/">サイボウズ 大阪梅田オフィス</a><br>第一回「CSS再入門」 | <a href="https://cssfriends.connpass.com/">CSS フレンズ</a></p>
+      </section>
+      <section>
+        <p><img src="images/ogp.png" alt=""></p>
+        <ul style="text-align: left;">
+          <li>シマキョウスケ（ <a href="https://twitter.com/shima_x_o">@shima_x_o</a> ）</li>
+          <li>デザイン制作会社勤務</li>
+          <li>HTML と CSS だけを書いて生活しています。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>突然ですが CSS のプロパティって<br>いくつあるか知ってますか？</h2>
+      </section>
+      <section>
+        <h2>自分も知らなかったので、<br>昨日ググりました。</h2>
+      </section>
+      <section>
+        <p>でもはっきりとした数がわかりませんでした。。</p>
+      </section>
+      <section>
+        <p>心やさしいフレンズが Twitter とかで教えてくれるかな！？</p>
+        <p>期待しましょう。</p>
+      </section>
+
+      <section>
+        <h3>ただわかったことはプロパティが<br>ほんとにたくさんあって、覚えきれる気がしない。</h3>
+      </section>
+      <section>
+        <h3>誰かのブログとかからコピペする？</h3>
+      </section>
+      <section>
+        <h2>こういうのよくありますね</h2>
+        <h3 style="border-left: 5px solid #0b3a7f; text-align: left; padding-left: 20px; margin-top: 50px; font-size: .8em;">コピペで使える見だしスタイル</h3>
+        <div>
+          <pre>
+            <code>
+              .headline {
+                border-left: 5px solid #0b3a7f;
+                text-align: left;
+                padding-left: 20px;
+              }
+            </code>
+          </pre>
+        </div>
+      </section>
+      <section>
+        <h3><strike>誰かのブログとかからコピペする？</strike></h3>
+        <p>今日はやめよう</p>
+      </section>
+
+      <section>
+        <h3>コピペに頼ってたら、<br>いつまで立ってもプロパティについて覚えれないし<br>制作スピードがあがりませんね。</h3>
+      </section>
+      <section>
+        <h3>でも実際にプロパティをタイピングするのは大変。</h3>
+        <p>間違える可能性もあるし。</p>
+      </section>
+      <section>
+        <h3>そこで今回はプロパティ名の入力を補助し、<br>タイピング数を減らすことができるツールを紹介します。</h3>
+      </section>
+
+      <section>
+        <h2>Emmet（エメット）</h2>
+        <p><a href="https://emmet.io/">https://emmet.io/</a></p>
+      </section>
+
+      <section>
+        <h2>Emmet とは</h2>
+        <p>独自の省略文字で、CSS を書くことが可能になります。</p>
+      </section>
+
+      <section>
+        <p>けっこう古くからありますが<br>ブログの記事とか最近みない気がする。</p>
+      </section>
+
+      <section>
+        <p>元々は Zen-Coding という名前でしたが、2012年9月ごろから「Emmet」という名前で開発が進められ、正式リリースされた現在も機能の拡張が行われているツールです。</p>
+        <p><a href="https://blogs.adobe.com/creativestation/web-learning-emmet-why-emmet">HTML/CSSを爆速コーディング Emmet入門 第1回 Emmetを薦める理由 | Adobe Creative Station</a> より</p>
+      </section>
+
+      <section>
+        <h3>「独自の省略文字で入力」とはこんな感じです。</h3>
+      </section>
+
+      <section>
+        <h2>例えばこんな感じ</h2>
+        <p>background は bg と打つだけ</p>
+        <pre>
+          <code>
+            bg
+          </code>
+        </pre>
+        <p>タブキーもしくは control + e</p>
+        <pre>
+          <code>
+            background: #000;
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>例えばこんな感じ</h2>
+        <p>background-color は bgc と打つだけ</p>
+        <pre>
+          <code>
+            bgc
+          </code>
+        </pre>
+        <p>タブキーもしくは control + e</p>
+        <pre>
+          <code>
+            background-color: #000;
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>例えばこんな感じ</h2>
+        <p>ショートハンドも一気にでます</p>
+        <pre>
+          <code>
+            bg+
+          </code>
+        </pre>
+        <p>タブキーもしくは control + e</p>
+        <pre>
+          <code>
+            background: #fff url() 0 0 no-repeat;
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>例えばこんな感じ</h2>
+        <p>margin 上下 10px 左右 20px</p>
+        <pre>
+          <code>
+            m10-20
+          </code>
+        </pre>
+        <p>タブキーもしくは control + e</p>
+        <pre>
+          <code>
+            margin: 10px 20px;
+          </code>
+        </pre>
+      </section>
+      <section>
+        <h2>その他もろもろ</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>頭文字</th>
+              <th>出力されるプロパティ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>m</td>
+              <td>margin</td>
+            </tr>
+            <tr>
+              <td>p</td>
+              <td>padding</td>
+            </tr>
+            <tr>
+              <td>po</td>
+              <td>position</td>
+            </tr>
+            <tr>
+              <td>w</td>
+              <td>width</td>
+            </tr>
+            <tr>
+              <td>h</td>
+              <td>height</td>
+            </tr>
+          </tbody>
+
+        </table>
+        <p>「Emmet CSS チートシート」とかでググるとイイと思います。</p>
+
+      </section>
+
+      <section>
+        <h2>プロパティの頭文字を入力したら<br>大体のプロパティが出力されます。</h2>
+      </section>
+
+      <section>
+        <h3>Emmet を使うには使用されてるエディターに<br>プラグインなどをいれると使えます。</h3>
+        <ul>
+          <li>Atom - <a href="https://atom.io/packages/emmet">https://atom.io/packages/emmet</a></li>
+          <li>Dreamweaver CC 2017 は標準でインストールされている？</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>HTML でも使えるので<br>ぜひ使ってみてくださいね！</h2>
+      </section>
+      <section>
+        <h2>おわり</h2>
+      </section>
+    </div>
+  </div>
+
+  <script src="/lib/js/head.min.js"></script>
+  <script src="/js/reveal.js"></script>
+
+  <script>
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    history: true,
+    progress: true,
+    slideNumber: false,
+    controls: false,
+    // More info https://github.com/hakimel/reveal.js#dependencies
+    dependencies: [
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      { src: 'plugin/notes/notes.js', async: true },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+    ]
+  });
+  </script>
+</body>
+</html>

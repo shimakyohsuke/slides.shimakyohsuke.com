@@ -1,0 +1,77 @@
+/**
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fefefe;
+
+$mainColor: #191919;
+$headingColor: #191919;
+
+$mainFontSize: 30px;
+$mainFont: GloberRegular, "游ゴシック体", "Yu Gothic", YuGothic, Hiragino Sans, Meiryo, 'Roboto', sans-serif;
+$headingFont: GloberRegular, "游ゴシック体", "Yu Gothic", YuGothic, Hiragino Sans, Meiryo, 'Roboto', sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: 600;
+$linkColor: #0b3a7f;
+$headingLineHeight: 1.5;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal .progress {
+	height: 17px;
+}
+.reveal pre {
+	font-size: 24px;
+}
+.reveal section {
+	li {
+		line-height: 1.6;
+	}
+	img {
+		border: 0;
+		background: #fefefe;
+		max-width: 60%;
+	}
+	p {
+		line-height: 1.5;
+		font-size: 34px;
+		font-weight: 600;
+	}
+	iframe.instagram-media {
+		max-width: 60% !important;
+		max-height: 60% !important;
+		display: inline !important;
+		margin: 0 !important;
+	}
+}
