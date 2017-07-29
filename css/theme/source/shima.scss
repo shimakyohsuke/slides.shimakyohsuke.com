@@ -73,4 +73,7 @@ section.has-dark-background {
 		display: inline !important;
 		margin: 0 !important;
 	}
+	strong {
+		background: linear-gradient(transparent 70%, rgba(249,159,72,0.7) 70%);
+	}
 }
