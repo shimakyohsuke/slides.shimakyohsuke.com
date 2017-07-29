@@ -14,7 +14,7 @@
     <div class="slides">
 
       <section>
-        <h1 style="font-size: 1.5em;">フロントエンドエンジニアのためのサーバーレス入門(Netlify でブログ構築編) </h1>
+        <h1 style="font-size: 1.9em;">フロントエンドエンジニアのためのサーバーレス入門(Netlify でブログ構築編) </h1>
         <p>2017/07/29<br>Serverless 勉強会@京都 vol.1<br>Serverless Framework User Group</p>
       </section>
 
@@ -55,10 +55,11 @@
 
       <section>
         <h2>今日なんの話しすんの</h2>
-        <p>Netlify を使って多人数で運営するブログサイトを作ったよー<br>って話になります。</p>
+        <p>Netlify を使って<strong>多人数で運営するブログサイト</strong>を作ったよー<br>って話になります。</p>
       </section>
 
       <section>
+        <h2>宣伝</h2>
         <p>なんかうまそうな飯画像がタイムラインに流れてきてほしい方はフォローお願いします。</p>
         <p><a href="https://twitter.com/kanpaihonmachi">https://twitter.com/kanpaihonmachi</a></p>
         <p><a href="https://www.instagram.com/honmachinomi/">https://www.instagram.com/honmachinomi/</a></p>
@@ -121,7 +122,7 @@
         <h2>Hugo</h2>
         <p>静的サイトジェネレーター</p>
         <ul>
-          <li>Markdown 大好き</li>
+          <li>Markdown で書ける（Markdown 大好き）</li>
           <li>管理画面（WordPress で言うダッシュボード的なもの）がない</li>
           <li>多人数運用は GitHub 使って解決</li>
           <li><a href="https://www.staticgen.com/">StaticGen</a> のランキング上位のジェネレーターをほぼ全部試したのですが、 Hugo が一番使いやすかった</li>
@@ -145,11 +146,12 @@
 
       <section>
         <h2>GitHub</h2>
-        <p>コード管理・デプロイ</p>
+        <p>もろもろのバージョン管理・静的サイトジェネレーターを多人数で運用するため・デプロイ</p>
         <ul>
           <li>みんな使ってるから</li>
           <li>みんな使ってる ＝ みんな使える</li>
         </ul>
+        <p><a href="https://github.com/honmachi-nomi/knp-honmachi-netlify">https://github.com/honmachi-nomi/knp-honmachi-netlify</a></p>
       </section>
 
       <section>
@@ -159,9 +161,10 @@
       <section>
         <h2>記事の公開手順</h2>
         <ol>
+          <li>GitHub にサイト用のリポジトリ作成</li>
           <li>Netlify に New site 作成</li>
           <li>ローカルに Hugo 環境構築</li>
-          <li>ブランチを適当変更</li>
+          <li>ブランチを適宜変更</li>
           <li>Hugo コマンドで記事作成（.md ファイル作ってくれるだけ</li>
           <li>書いたら Add して Commit して Push</li>
           <li>公開用のブランチに PR だして Merge されたら Netlify がよしなにしてくれて公開される</li>
@@ -176,18 +179,26 @@
         <h2>本日の勉強会レポートのブログサイトを<br>すぐに作成できますね😎</h2>
       </section>
 
-
       <section>
         <h2>よくある質問</h2>
         <p>Q. 静的サイトってフォームとかどうすんの？</p>
         <p><s>A. Google フォームでいいじゃん</s></p>
-        <p>A. Netlify がフォーム用意してくれた</p>
+        <p>A. Netlify がフォーム用意してくれた ← New</p>
       </section>
 
       <section>
         <h2>Netlify がフォーム用意してくれた</h2>
         <p><a href="https://www.netlify.com/docs/form-handling/">Form Handling | Netlify</a></p>
         <p>Netlify と Hugo を気に入ってしまって個人運営のサイトを新たに立ち上げてフォーム作りました。<br><a href="https://hiking-hiking.com/contact_us/">https://hiking-hiking.com/contact_us/</a><br>内容は Slack で受け取ることができます。</p>
+      </section>
+
+      <section>
+        <h2>まとめ</h2>
+        <ul>
+          <li>サーバー代無料で表示速度がそこそこ早いサイトが作れた</li>
+          <li>Git が使えれば多人数での運用も問題ない</li>
+          <li>メンテらしいことはしていない</li>
+        </ul>
       </section>
 
       <section>
