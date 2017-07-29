@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>こんなにあった！？CSS の単位の話 | 第2回「つらくならないCSS」 | CSSフレンズ | シマキョウスケ</title>
+  <link rel="stylesheet" href="/css/reveal.css">
+  <link rel="stylesheet" href="/css/theme/shima.css">
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="/lib/css/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h1>こんなにあった！？<br>CSS の単位の話</h1>
+        <p>2017/06/03 <a href="https://cybozu.co.jp/company/outline/">サイボウズ 大阪梅田オフィス</a><br>第2回「つらくならないCSS」 | <a href="https://cssfriends.connpass.com/">CSS フレンズ</a></p>
+      </section>
+
+      <section>
+        <p><img src="/images/ogp.png" alt=""></p>
+        <ul style="text-align: left;">
+          <li>シマキョウスケ（ <a href="https://twitter.com/shima_x_o">@shima_x_o</a> ）</li>
+          <li>デザイン制作会社勤務</li>
+          <li>HTML と CSS だけを書いて生活しています。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>単位の話を使い方などをダラダラ話ます。</h2>
+      </section>
+
+      <section>
+        <h2>px</h2>
+        <p>絶対値</p>
+        <p>大体の人が最初に覚える単位ですよね？</p>
+      </section>
+
+      <section>
+        <h2>em</h2>
+        <p>相対値</p>
+        <p>親、祖先要素のフォントサイズを基準とした単位。</p>
+      </section>
+
+      <section>
+        <h2>rem</h2>
+        <p>相対値</p>
+        <p>ルート要素のフォントサイズを基準とした単位。</p>
+        <pre>
+          <code>
+            /* ルート要素（html タグ）を 10px に指定しておいて */
+            html {
+              font-size: 62.5%;
+            }
+            /* p 要素を 16px に指定するには以下の様に記述する  */
+            p {
+                font-size: 1.6rem;
+            }
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>vw、vh</h2>
+        <p>vw: viewport width ビューポートの幅に対する割合</p>
+        <p>vh: viewport height ビューポートの高さに対する割合</p>
+      </section>
+
+      <section>
+        <p>width に 100vw と 100% の指定の違いは、vw はブラウザのウィンドウにスクロールバーが表示されているとそこも含まれているので注意が必要です。</p>
+        <p>Mac の設定でスクロールバーを隠す設定していると気が付かないことがあるので、覚えておくといいと想います。</p>
+      </section>
+
+      <section>
+        <h2>単位まだまだあります。。</h2>
+        <p>気になる方はコチラ↓↓↓</p>
+        <p><a href="https://www.w3.org/TR/css-values/">CSS Values and Units Module Level 3</a></p>
+      </section>
+
+      <section>
+        <p>紹介を途中で投げ出してしまいましたが、<br>文字サイズを指定する時は px 指定は辞めておいたほうが無難だと想います。</p>
+      </section>
+
+      <section>
+        <p>px 指定は絶対値なので<br>ブラウザの拡大・縮小の機能が効きません。</p>
+        <a href="https://codepen.io/shimakyohsuke/pen/zzYpxP">確認用ページ</a>
+      </section>
+
+      <section>
+        <p>文字サイズを指定は em や % や rem を使うといいと思います。</p>
+        <p>また、レスポンシブサイトの時に親・ルートのタグの文字サイズの変更のみで全体のサイズを変更できるので楽かなと。<br>（デザイナーさんの協力は必要かもしれませんが</p>
+      </section>
+
+      <section>
+        <h2>おまけ</h2>
+      </section>
+
+      <section>
+        <p>vw の面白い使い方は、</p>
+        <pre>
+          <code>
+            .square {
+              width: 50vw;
+              height: 50vw;
+            }
+          </code>
+        </pre>
+        <p>ディスプレイのサイズが可変してもずっと正方形になります。</p>
+      </section>
+
+      <section>
+        <div style="display: flex; justify-content: center;">
+          <div style="width: 20vw; height: 20vw; background-color: #1b91ff; display: flex; justify-content: center;     align-items: center; color: #FFF;">ディスプレイのサイズが可変しても<br>ずっと正方形になります。</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>この単位いつ使うねん</h2>
+      </section>
+
+      <section>
+        <h2>ch</h2>
+      </section>
+
+      <section>
+        <h2>ご存じの方✋✋✋</h2>
+      </section>
+
+      <section>
+        <h2>ch は chracter unit で<br>「0（ゼロ）」の幅を単位とします。</h2>
+      </section>
+
+      <section>
+        <h2>「0（ゼロ）」の幅を単位とします。</h2>
+      </section>
+
+      <section>
+        <p><img src="images/gori_gaaan.png" alt="" style="box-shadow: none; max-width: 80%;"></p>
+      </section>
+
+      <section>
+        <h2>こういうことです。</h2>
+        <a href="https://codepen.io/shimakyohsuke/pen/wgmxJE" target="_blank">codepen</a>
+      </section>
+
+      <section>
+        <h2>日本語の Web フォントで<br>等幅フォントがあれば使えそうですね。</h2>
+      </section>
+
+      <section>
+        <h2>宣伝です！</h2>
+      </section>
+
+      <section>
+        <p><img src="images/wck.png" alt="" style="box-shadow: none; max-width: 100%;"></p>
+      </section>
+
+      <section>
+        <h2>WordCamp Kyoto 2017 知ってるよって方✋</h2>
+      </section>
+
+      <section>
+        <h2>WordCamp Kyoto 2017 参加される方✋</h2>
+      </section>
+
+      <section>
+        <h3>本日、最初のセッションで登壇された<br>さかきばらさんと後ろに座ってるコニタンさんも WordCamp Kyoto 2017 でお話されます！</h3>
+      </section>
+
+      <section>
+        <h3>興味ある方はこの後のお菓子交流会とかで<br>どんな話をするのか少し内容を聞いてみてください！</h3>
+      </section>
+
+      <section>
+        <h2><strike>で、すぐに参加登録してください！</strike></h2>
+        <p>すみません、昨日チケットなくなりました。</p>
+      </section>
+
+      <section>
+        <h2>当日のボランティアスタッフは募集中です！</h2>
+      </section>
+
+      <section>
+        <h2>よろしくお願いいたします！</h2>
+      </section>
+
+      <section>
+        <h2>以上です。</h2>
+      </section>
+
+      <section>
+        <h2>おわり</h2>
+      </section>
+    </div>
+  </div>
+
+  <script src="/lib/js/head.min.js"></script>
+  <script src="/js/reveal.js"></script>
+
+  <script>
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    history: true,
+    progress: true,
+    slideNumber: true,
+    controls: false,
+    // More info https://github.com/hakimel/reveal.js#dependencies
+    dependencies: [
+      { src: '/plugin/markdown/marked.js' },
+      { src: '/plugin/markdown/markdown.js' },
+      { src: '/plugin/notes/notes.js', async: true },
+      { src: '/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+    ]
+  });
+  </script>
+</body>
+</html>

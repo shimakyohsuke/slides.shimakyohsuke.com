@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>フロントエンドエンジニアのためのサーバーレス入門(Netlify でブログ構築編) | Serverless 勉強会@京都 vol.1 | Serverless Framework User Group | シマキョウスケ</title>
+  <link rel="stylesheet" href="/css/reveal.css">
+  <link rel="stylesheet" href="/css/theme/shima.css">
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="/lib/css/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h1 style="font-size: 1.5em;">フロントエンドエンジニアのためのサーバーレス入門(Netlify でブログ構築編) </h1>
+        <p>2017/07/29<br>Serverless 勉強会@京都 vol.1<br>Serverless Framework User Group</p>
+      </section>
+
+      <section>
+        <p><img src="/images/ogp.png" alt=""></p>
+        <ul style="text-align: left;">
+          <li>シマキョウスケ（ <a href="https://twitter.com/shima_x_o">@shima_x_o</a> ）</li>
+          <li>デザイン制作会社勤務</li>
+          <li>HTML と CSS だけを書いて生活しています。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>今日なんの話しすんの</h2>
+        <p>Netlify を使ってブログ作って<br>サーバーレス入門したよーという話です。</p>
+      </section>
+
+      <section>
+        <h2>今日なんの話しすんの</h2>
+        <p>「カンパイ本町」という共同ブログを運営しています。<br>内容は飯食いに行ったら記事にして思い出を残すのみ。</p>
+      </section>
+
+      <section>
+        <h2>今日なんの話しすんの</h2>
+        <p><img src="https://knp-honmachi.net/images/logo.png" alt="" style="padding: 1em;"></p>
+        <p><a href="https://knp-honmachi.net/">https://knp-honmachi.net/</a></p>
+      </section>
+
+      <section>
+        <h2>今日なんの話しすんの</h2>
+        <p>web コミュニティで知り合った 3 人で運営しています。</p>
+        <ul>
+          <li><a href="https://twitter.com/maki_saki">@maki_saki</a></li>
+          <li><a href="https://twitter.com/misumi_takuma">@misumi_takuma</a></li>
+          <li><a href="https://twitter.com/shima_x_o">@shima_x_o</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>今日なんの話しすんの</h2>
+        <p>Netlify を使って多人数で運営するブログサイトを作ったよー<br>って話になります。</p>
+      </section>
+
+      <section>
+        <p>なんかうまそうな飯画像がタイムラインに流れてきてほしい方はフォローお願いします。</p>
+        <p><a href="https://twitter.com/kanpaihonmachi">https://twitter.com/kanpaihonmachi</a></p>
+        <p><a href="https://www.instagram.com/honmachinomi/">https://www.instagram.com/honmachinomi/</a></p>
+      </section>
+
+      <section>
+        <h3>使ったサービス・仕組みとか</h3>
+        <ul>
+          <li>Netlify - <a href="https://www.netlify.com/">https://www.netlify.com/</a></li>
+          <li>Hugo - <a href="https://gohugo.io/">https://gohugo.io/</a></li>
+          <li>GitHub - <a href="https://github.com/">https://github.com/</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>それぞれの役割とメリット</h2>
+      </section>
+
+      <section>
+        <h2>Netlify</h2>
+      </section>
+
+      <section>
+        <h2>Netlify</h2>
+        <ul>
+          <li>サーバーホスティングに使用</li>
+          <li>無料で使用できる</li>
+          <li>SSL の対応が楽（Let's Encrypt の自動更新）</li>
+          <li>HTTP/2 も対応</li>
+          <li>CDN で配信してくれてるらしい（無料の場合は海外からの配信？）</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Netlify</h2>
+        <p>Write frontend code. Push it. We handle the rest.</p>
+        <p>[適当に翻訳]<br>フロントエンドのコードを書いたらあなたは Push だけしといて。残りの部分は私たちが処理しますから。</p>
+      </section>
+
+      <section>
+        <h2>Netlify</h2>
+        <p>「うまい、やすい、はやい」の環境と言える</p>
+        <p>ブログ会の吉野家じゃね？</p>
+      </section>
+
+      <section>
+        <h3>Netlify をとりあえず使うには、</h3>
+        <ul>
+          <li>アカウント作って、</li>
+          <li>このページにアクセス → <a href="https://app.netlify.com/">https://app.netlify.com/</a></li>
+          <li>HTML ファイルとか CSS ファイルとか画像一式を zip ファイルにしてドラッグ＆ドロップするだけで、Netlify のサブドメインでページが公開されます。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Hugo</h2>
+      </section>
+
+      <section>
+        <h2>Hugo</h2>
+        <p>静的サイトジェネレーター</p>
+        <ul>
+          <li>Markdown 大好き</li>
+          <li>管理画面（WordPress で言うダッシュボード的なもの）がない</li>
+          <li>多人数運用は GitHub 使って解決</li>
+          <li><a href="https://www.staticgen.com/">StaticGen</a> のランキング上位のジェネレーターをほぼ全部試したのですが、 Hugo が一番使いやすかった</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Hugo</h2>
+        <h3>どうして静的サイトジェネレーターを使うのか。</h3>
+        <ul>
+          <li>コンテンツに集中したい</li>
+          <li>メンテナンスしたくない</li>
+          <li>WordPress は確かに便利だけど、環境の事ばかり考えるのはなんか違う。（CMS なのに）</li>
+          <li>更新辞めてほっといてもセキュリティの心配したくない</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>GitHub</h2>
+      </section>
+
+      <section>
+        <h2>GitHub</h2>
+        <p>コード管理・デプロイ</p>
+        <ul>
+          <li>みんな使ってるから</li>
+          <li>みんな使ってる ＝ みんな使える</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>自分達が何をしたいかを考えると<br>これらの構成がベストと行き着きました。</h3>
+      </section>
+
+      <section>
+        <h2>記事の公開手順</h2>
+        <ol>
+          <li>Netlify に New site 作成</li>
+          <li>ローカルに Hugo 環境構築</li>
+          <li>ブランチを適当変更</li>
+          <li>Hugo コマンドで記事作成（.md ファイル作ってくれるだけ</li>
+          <li>書いたら Add して Commit して Push</li>
+          <li>公開用のブランチに PR だして Merge されたら Netlify がよしなにしてくれて公開される</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>簡単そうでしょ？</h3>
+      </section>
+
+      <section>
+        <h2>本日の勉強会レポートのブログサイトを<br>すぐに作成できますね😎</h2>
+      </section>
+
+
+      <section>
+        <h2>よくある質問</h2>
+        <p>Q. 静的サイトってフォームとかどうすんの？</p>
+        <p><s>A. Google フォームでいいじゃん</s></p>
+        <p>A. Netlify がフォーム用意してくれた</p>
+      </section>
+
+      <section>
+        <h2>Netlify がフォーム用意してくれた</h2>
+        <p><a href="https://www.netlify.com/docs/form-handling/">Form Handling | Netlify</a></p>
+        <p>Netlify と Hugo を気に入ってしまって個人運営のサイトを新たに立ち上げてフォーム作りました。<br><a href="https://hiking-hiking.com/contact_us/">https://hiking-hiking.com/contact_us/</a><br>内容は Slack で受け取ることができます。</p>
+      </section>
+
+      <section>
+        <h2>面倒なことから解放されよう</h2>
+      </section>
+
+      <section>
+        <h2>おわり</h2>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="/lib/js/head.min.js"></script>
+  <script src="/js/reveal.js"></script>
+
+  <script>
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    history: true,
+    progress: true,
+    slideNumber: true,
+    controls: false,
+    // More info https://github.com/hakimel/reveal.js#dependencies
+    dependencies: [
+      { src: '/plugin/markdown/marked.js' },
+      { src: '/plugin/markdown/markdown.js' },
+      { src: '/plugin/notes/notes.js', async: true },
+      { src: '/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+    ]
+  });
+  </script>
+</body>
+</html>
